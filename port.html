@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio website</title>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="logo">HaSh</a>
+        <nav class="navbar">
+            <a href="#home" style="--vlr:1">Home</a>
+            <a href="#services"style="--vlr:2">Services</a>
+            <a href="#contact-me"style="--vlr:4">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="text-content">
+            <h1>Hi, I'm Hari Shekhar</h1>
+            <h3>Software Engineer</h3>
+            <p>I am a Software Engineer</p>
+            <p>Lets connect and create some interesting ideas & projects</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/a-l-hari-shekhar-06566a237/"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/harishekhar06/"><i class="fa fa-github"></i></a>
+                <a href="https://www.instagram.com/hari._.shekhar/" id=""><i class="fa fa-instagram"></i></i></i></a>
+            </div>
+        </div>
+        <div class="image">
+            <img src="assets/WhatsApp_Image_2024-01-18_at_11.48.03_AM-removebg-preview (3).png">
+        </div>
+    </section>
+    <section id="services">
+        <div class="services">
+            <h2 class="headding">Services</h2>
+            <div class="row1">
+                <div class="card">
+                    <div><img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000"/></div>
+                    <div><h1>Python</h1></div>
+                    <div><p>Python is one of the best languages that i have learnt and done projects in so far. These include RASA, Flask, FastAPI etc</p></div>
+                </div>
+                <div class="card">
+                    <div><img src="https://img.icons8.com/?size=100&id=53451&format=png&color=000000"/></div>
+                    <div><h1>Web Development</h1></div>
+                    <div><p>This is another wonderful stack to code in.</p></div>
+                </div>
+                <div class="card">
+                    <div><img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000"/></div>
+                    <div><h1>UI Designing</h1></div>
+                    <div><p>Other than development, I have a some cool skills in designing UI.</p></div>
+                </div>
+                <div class="card">
+                    <div><img src="https://img.icons8.com/?size=100&id=8305&format=png&color=000000"/></div>
+                    <div><h1>Database</h1></div>
+                    <div><p>I have worked in some of the database technologies like MySQL, SQL, MongoDB.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-me">
+        <div class="contact-me">
+            <form id="submit-form" method="" action="">
+                <div class="form-body">
+                    <h2>Lets get in touch</h2>
+                    <div class="input">
+                        <div><input type="text" name="name" placeholder="Your Name"></div>       
+                    </div>
+                    <div class="input">
+                        <div><input type="email" name="email" placeholder="Your Email"></div>
+                    </div>
+                    <div class="input">
+                        <div><textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea></div>
+                    </div>
+                    <div class="button">
+                        <button>Send</button>
+                    </div>
+                </div>
+             </form>   
+        </div>
+    </section>
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzyNd4ore1hMF2QyneL7SbUplJVn6aJ26jF8UtlP7DAh3istkw8ydmME0aZbPYChRhwYw/exec",
+                data:$("#submit-form").serialize(),
+                method:"POST",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script> 
+    <script src="port.js"></script>
+</body>
+</html>

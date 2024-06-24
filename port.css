@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    background: #081b29;
+}
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    background: #081b29;
+    z-index: 1000;
+}
+.logo {
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    animation: SlideRight 1s ease forwards;
+}
+@keyframes SlideRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-left: 4rem;
+    display: inline-block;
+    transition: 0.3s;
+    animation: SlideTop 0.5s ease forwards;
+    opacity: 0;
+    animation-delay: calc(0.2s * var(--vlr));
+}
+@keyframes SlideTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.navbar a:hover {
+    color: #08adff;
+}
+.home {
+    padding: 10rem 9% 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+.text-content {
+    max-width: 60rem;
+}
+.text-content h1 {
+    font-size: 5.6rem;
+    font-weight: 600;
+    color: #00ffff;
+    animation: SlideTop 0.5s ease forwards;
+    opacity: 0;
+    animation-delay: 0.7s;
+}
+.text-content h3 {
+    font-size: 3.2rem;
+    animation: SlideRight 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+.text-content p {
+    font-size: 1.6rem;
+    text-align: justify;
+}
+.home img {
+    width: 28rem;
+    border-radius: 50%;
+}
+.social-media i {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;
+    border-radius: 50%;
+}
+.social-media i:hover {
+    background: #00ffff;
+    color: #081b29;
+    box-shadow: 0 0 0.2rem #00ffff, 0 0 1rem #00ffff, 0 0 2rem #00ffff;
+}
+.services {
+    padding: 6rem 9%;
+}
+.services .headding {
+    text-align: center;
+    font-size: 3.6rem;
+    margin-bottom: 4rem;
+    color: #50cafa;
+}
+.row1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    flex: 1 1 22%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem;
+    border-radius: 10px;
+    background-color: #b7eded;
+    margin: 1rem;
+    padding: 2rem;
+}
+.card h1 {
+    color: black;
+    margin: 1rem 0;
+}
+.card p {
+    color: #030303;
+}
+.contact-me {
+    padding: 6rem 9%;
+    text-align: center;
+}
+.contact-me h2 {
+    font-size: 3.6rem;
+    margin-bottom: 4rem;
+    color: #50cafa;
+}
+.contact-me form {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.input {
+    margin-top: 1.5rem;
+}
+.input input,
+.input textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    color: #50cafa;
+    background: #081b29;
+    border-radius: 0.8rem;
+    border: 2px solid #50cafa;
+    resize: vertical;
+    margin-top: 0.6rem;
+}
+.button {
+    margin-top: 0.3rem;
+}
+.button button {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 4px;
+    border: none;
+    color: #081b29;
+    background-color: #50cafa;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button button:hover {
+    opacity: 0.8;
+}
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        padding: 1rem 2%;
+        display: block;
+        background: #081b29;
+    }
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home img {
+        margin-top: 2rem;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
