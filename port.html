@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="port.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portfolio website</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("rqkssVPa1EUt7GhoD");
+    </script>
 </head>
 <body>
     <header class="header">
@@ -62,44 +66,25 @@
     </section>
     <section id="contact-me">
         <div class="contact-me">
-            <form id="submit-form" method="" action="">
+            <form id="submit-form" onsubmit="sendMail(event);">
                 <div class="form-body">
                     <h2>Lets get in touch</h2>
                     <div class="input">
-                        <div><input type="text" name="name" placeholder="Your Name"></div>       
+                        <div><input type="text" id="f_name" name="f_name" placeholder="Your Name"></div>
                     </div>
                     <div class="input">
-                        <div><input type="email" name="email" placeholder="Your Email"></div>
+                        <div><input type="email" id="email_id" name="email_id" placeholder="Your Email"></div>
                     </div>
                     <div class="input">
-                        <div><textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea></div>
+                        <div><textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message"></textarea></div>
                     </div>
                     <div class="button">
-                        <button>Send</button>
+                        <button type="submit">Send</button>
                     </div>
                 </div>
-             </form>   
+            </form>
         </div>
     </section>
-    <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzyNd4ore1hMF2QyneL7SbUplJVn6aJ26jF8UtlP7DAh3istkw8ydmME0aZbPYChRhwYw/exec",
-                data:$("#submit-form").serialize(),
-                method:"POST",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script> 
     <script src="port.js"></script>
 </body>
 </html>

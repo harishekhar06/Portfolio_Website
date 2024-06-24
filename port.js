@@ -1,17 +1,14 @@
-(function() {
-  emailjs.init('YOUR_USER_ID'); // Replace 'YOUR_USER_ID' with your EmailJS user ID
-})();
-
-$(document).ready(function() {
-  $('#contact-form').on('submit', function(event) {
-      event.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-          .then(function() {
-              alert('Form submitted successfully');
-              window.location.reload();
-          }, function(error) {
-              alert('Error: ' + JSON.stringify(error));
-          });
-  });
-});
-
+function sendMail(event) {
+  event.preventDefault();
+  let params = {
+      name: document.getElementById("f_name").value,
+      email: document.getElementById("email_id").value,
+      message: document.getElementById("message").value
+  };
+  emailjs.send("service_x35aze3", "template_aosrt2a", params)
+      .then(function(response) {
+          alert("Mail sent successfully! Status: " + response.status);
+      }, function(error) {
+          alert("Failed to send mail. Error: " + JSON.stringify(error));
+      });
+}
